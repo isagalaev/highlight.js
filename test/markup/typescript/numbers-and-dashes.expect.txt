@@ -1,9 +1,9 @@
-<span class="hljs-keyword">let</span> num = -<span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> num <span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-number">3</span>;
 
-<span class="hljs-keyword">let</span> diff = <span class="hljs-number">5</span> - <span class="hljs-number">3</span>;
-<span class="hljs-keyword">let</span> diff = <span class="hljs-number">5</span>-<span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> diff <span class="hljs-operator">=</span> <span class="hljs-number">5</span> <span class="hljs-operator">-</span> <span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> diff <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-operator">-</span><span class="hljs-number">3</span>;
 
 <span class="hljs-comment">// Who writes JS like that??</span>
-<span class="hljs-keyword">let</span> num = - <span class="hljs-number">3</span>;
-<span class="hljs-keyword">let</span> diff = <span class="hljs-number">5</span> -<span class="hljs-number">3</span>;
-<span class="hljs-keyword">let</span> diff = <span class="hljs-number">5</span>- <span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> num <span class="hljs-operator">=</span> <span class="hljs-operator">-</span> <span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> diff <span class="hljs-operator">=</span> <span class="hljs-number">5</span> <span class="hljs-operator">-</span><span class="hljs-number">3</span>;
+<span class="hljs-keyword">let</span> diff <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-operator">-</span> <span class="hljs-number">3</span>;

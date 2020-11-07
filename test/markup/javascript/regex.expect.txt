@@ -1,5 +1,5 @@
 <span class="hljs-comment">// examples that have proven problematic in the past</span>
 <span class="hljs-string">`Bad <span class="hljs-subst">${foo / <span class="hljs-number">1000</span>}</span>`</span>
-foo = <span class="hljs-number">2</span> / <span class="hljs-number">2</span> + <span class="hljs-number">2</span> / <span class="hljs-number">2</span>;
-foo = <span class="hljs-regexp">/ 2 + 2 /</span>;
-b = a++ / <span class="hljs-number">2</span>;
+bar <span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-operator">/</span> <span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span> <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
+foo <span class="hljs-operator">=</span> <span class="hljs-regexp">/ 2 + 2 /</span>;
+b <span class="hljs-operator">=</span> a<span class="hljs-operator">++</span> <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;

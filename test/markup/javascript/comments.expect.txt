@@ -1,4 +1,4 @@
-f = <span class="hljs-function">(<span class="hljs-params">                <span class="hljs-comment">// f is a recursive function taking:</span>
+f <span class="hljs-operator">=</span> <span class="hljs-function">(<span class="hljs-params">                <span class="hljs-comment">// f is a recursive function taking:</span>
   [c,                <span class="hljs-comment">//   c   = next digit character</span>
       ...a],         <span class="hljs-comment">//   a[] = array of remaining digits</span>
   o = b,            <span class="hljs-comment">//   o   = output string</span>

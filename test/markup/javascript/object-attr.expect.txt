@@ -2,8 +2,8 @@
   <span class="hljs-attr">key</span>: value, <span class="hljs-comment">// with comment</span>
   <span class="hljs-attr">key2</span>: value,
   <span class="hljs-attr">key2clone</span>: value,
-  <span class="hljs-string">&#x27;key-3&#x27;</span>: value,
-  <span class="hljs-attr">key4</span>: <span class="hljs-literal">false</span> ? <span class="hljs-literal">undefined</span> : <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&#x27;key-3&#x27;</span><span class="hljs-operator">:</span> value,
+  <span class="hljs-attr">key4</span>: <span class="hljs-literal">false</span> <span class="hljs-operator">?</span> <span class="hljs-literal">undefined</span> <span class="hljs-operator">:</span> <span class="hljs-literal">true</span>,
   <span class="hljs-attr">key5</span>: value, <span class="hljs-comment">/* with a multiline comment */</span>
   <span class="hljs-attr">key6</span>: value,
   <span class="hljs-attr">key7</span>: value, <span class="hljs-comment">/* with a multiline comment */</span> <span class="hljs-comment">// another comment</span>

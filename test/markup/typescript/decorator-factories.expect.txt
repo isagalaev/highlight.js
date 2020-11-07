@@ -1,7 +1,7 @@
 <span class="hljs-meta">@foo</span>(<span class="hljs-string">&#x27;foo&#x27;</span>)
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
     <span class="hljs-meta">@baz</span>(<span class="hljs-number">123</span>)
-    <span class="hljs-keyword">private</span> myAttribute: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">private</span> myAttribute<span class="hljs-operator">:</span> <span class="hljs-built_in">string</span>;
 
     <span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-meta">@bar</span>(<span class="hljs-literal">true</span>) <span class="hljs-keyword">private</span> x,
                 <span class="hljs-meta">@bar</span>(qux(quux(<span class="hljs-literal">true</span>))) <span class="hljs-keyword">private</span> y</span>) { }

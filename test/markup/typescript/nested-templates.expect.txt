@@ -1,3 +1,3 @@
-<span class="hljs-keyword">let</span> foo = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> foo <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
 <span class="hljs-string">`hello <span class="hljs-subst">${foo ? <span class="hljs-string">`Mr <span class="hljs-subst">${name}</span>`</span> : <span class="hljs-string">&#x27;there&#x27;</span>}</span>`</span>;
-foo = <span class="hljs-literal">false</span>;
+foo <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;

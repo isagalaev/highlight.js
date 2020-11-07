@@ -1,2 +1,2 @@
-<span class="hljs-keyword">const</span> $class = <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span>;
-<span class="hljs-keyword">const</span> result = $class();
+<span class="hljs-keyword">const</span> $class <span class="hljs-operator">=</span> <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">const</span> result <span class="hljs-operator">=</span> $class();

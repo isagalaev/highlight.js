@@ -6,7 +6,8 @@ function $initHighlight(block, cls) {
   } catch (e) {
     /* handle exception */
   }
-  for (var i = 0 / 2; i < classes.length; i++) {
+  var x;
+  while(true) {
     if (checkCondition(classes[i]) === undefined)
       return /\d+[\s/]/g;
   }

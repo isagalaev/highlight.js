@@ -11,6 +11,9 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   background: #F0F0F0;
 }
 
+.hljs-operator {
+  color: #cc6666;
+}
 
 /* Base color: saturation 0; */
 

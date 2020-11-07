@@ -1,6 +1,6 @@
-<span class="hljs-keyword">var</span> noop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
+<span class="hljs-keyword">var</span> noop <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
 
-<span class="hljs-keyword">var</span> identity = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">foo</span>) </span>{
+<span class="hljs-keyword">var</span> identity <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">foo</span>) </span>{
   <span class="hljs-keyword">return</span> foo;
 };
 
@@ -10,17 +10,17 @@
   <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
 }
 
-<span class="hljs-keyword">type</span> Foo = {
-    functionInFoo(): <span class="hljs-built_in">void</span>;
+<span class="hljs-keyword">type</span> Foo <span class="hljs-operator">=</span> {
+    functionInFoo()<span class="hljs-operator">:</span> <span class="hljs-built_in">void</span>;
 };
 
-<span class="hljs-keyword">const</span> good = <span class="hljs-function">() =&gt;</span> <span class="hljs-number">0</span>;
-<span class="hljs-keyword">const</span> good = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> <span class="hljs-number">0</span>;
-<span class="hljs-keyword">const</span> bad = (<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> [...a, b]);
-<span class="hljs-keyword">const</span> bad = (<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> doSomething());
-<span class="hljs-keyword">const</span> bad = (<span class="hljs-function">() =&gt;</span> <span class="hljs-number">0</span>);
-<span class="hljs-keyword">const</span> bad = (<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> [...a, b]);
-<span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].reduce&lt;<span class="hljs-built_in">number</span>[]&gt;(<span class="hljs-function">(<span class="hljs-params">acc, next</span>) =&gt;</span> [...acc, next], []);
-<span class="hljs-keyword">const</span> bad = (<span class="hljs-function">(<span class="hljs-params">a=<span class="hljs-number">2</span>, b=<span class="hljs-number">5</span></span>) =&gt;</span> [...a, b]);
+<span class="hljs-keyword">const</span> good <span class="hljs-operator">=</span> <span class="hljs-function">() =&gt;</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> good <span class="hljs-operator">=</span> <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> bad <span class="hljs-operator">=</span> (<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> [...a, b]);
+<span class="hljs-keyword">const</span> bad <span class="hljs-operator">=</span> (<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> doSomething());
+<span class="hljs-keyword">const</span> bad <span class="hljs-operator">=</span> (<span class="hljs-function">() =&gt;</span> <span class="hljs-number">0</span>);
+<span class="hljs-keyword">const</span> bad <span class="hljs-operator">=</span> (<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> [...a, b]);
+<span class="hljs-keyword">const</span> array <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].reduce&lt;<span class="hljs-built_in">number</span>[]&gt;(<span class="hljs-function">(<span class="hljs-params">acc, next</span>) =&gt;</span> [...acc, next], []);
+<span class="hljs-keyword">const</span> bad <span class="hljs-operator">=</span> (<span class="hljs-function">(<span class="hljs-params">a=<span class="hljs-number">2</span>, b=<span class="hljs-number">5</span></span>) =&gt;</span> [...a, b]);
 sides.every(<span class="hljs-function">(<span class="hljs-params">length,width=(<span class="hljs-number">3</span>+<span class="hljs-number">2</span>+(<span class="hljs-number">4</span>/<span class="hljs-number">5</span>))</span>) =&gt;</span> length &gt; <span class="hljs-number">0</span> );
 

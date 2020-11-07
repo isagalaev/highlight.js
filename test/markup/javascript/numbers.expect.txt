@@ -1,25 +1,25 @@
 <span class="hljs-number">1000000000</span>   <span class="hljs-comment">// Is this a billion? a hundred millions? Ten millions?</span>
 <span class="hljs-number">101475938.38</span> <span class="hljs-comment">// what scale is this? what power of 10?</span>
 
-<span class="hljs-keyword">const</span> FEE = <span class="hljs-number">12300</span>;
+<span class="hljs-keyword">const</span> FEE <span class="hljs-operator">=</span> <span class="hljs-number">12300</span>;
 <span class="hljs-comment">// is this 12,300? Or 123, because it&#x27;s in cents?</span>
 
-<span class="hljs-keyword">const</span> AMOUNT = <span class="hljs-number">1234500</span>;
+<span class="hljs-keyword">const</span> AMOUNT <span class="hljs-operator">=</span> <span class="hljs-number">1234500</span>;
 <span class="hljs-comment">// is this 1,234,500? Or cents, hence 12,345? Or financial, 4-fixed 123.45?</span>
 
 <span class="hljs-number">1_000_000_000</span>           <span class="hljs-comment">// Ah, so a billion</span>
 <span class="hljs-number">101_475_938.38</span>          <span class="hljs-comment">// And this is hundreds of millions</span>
 
-<span class="hljs-keyword">let</span> fee = <span class="hljs-number">123_00</span>;       <span class="hljs-comment">// $123 (12300 cents, apparently)</span>
-<span class="hljs-keyword">let</span> fee = <span class="hljs-number">12_300</span>;       <span class="hljs-comment">// $12,300 (woah, that fee!)</span>
-<span class="hljs-keyword">let</span> amount = <span class="hljs-number">12345_00</span>;  <span class="hljs-comment">// 12,345 (1234500 cents, apparently)</span>
-<span class="hljs-keyword">let</span> amount = <span class="hljs-number">123_4500</span>;  <span class="hljs-comment">// 123.45 (4-fixed financial)</span>
-<span class="hljs-keyword">let</span> amount = <span class="hljs-number">1_234_500</span>; <span class="hljs-comment">// 1,234,500</span>
+<span class="hljs-keyword">let</span> fee <span class="hljs-operator">=</span> <span class="hljs-number">123_00</span>;       <span class="hljs-comment">// $123 (12300 cents, apparently)</span>
+<span class="hljs-keyword">let</span> fee <span class="hljs-operator">=</span> <span class="hljs-number">12_300</span>;       <span class="hljs-comment">// $12,300 (woah, that fee!)</span>
+<span class="hljs-keyword">let</span> amount <span class="hljs-operator">=</span> <span class="hljs-number">12345_00</span>;  <span class="hljs-comment">// 12,345 (1234500 cents, apparently)</span>
+<span class="hljs-keyword">let</span> amount <span class="hljs-operator">=</span> <span class="hljs-number">123_4500</span>;  <span class="hljs-comment">// 123.45 (4-fixed financial)</span>
+<span class="hljs-keyword">let</span> amount <span class="hljs-operator">=</span> <span class="hljs-number">1_234_500</span>; <span class="hljs-comment">// 1,234,500</span>
 
 <span class="hljs-number">0.000001</span> <span class="hljs-comment">// 1 millionth</span>
 <span class="hljs-number">0.000_001</span> <span class="hljs-comment">// 1 millionth</span>
 <span class="hljs-number">.000_001</span> <span class="hljs-comment">// 1 millionth</span>
--<span class="hljs-number">.000_001</span> <span class="hljs-comment">// 1 millionth</span>
+<span class="hljs-operator">-</span><span class="hljs-number">.000_001</span> <span class="hljs-comment">// 1 millionth</span>
 <span class="hljs-number">1e10_000</span>  <span class="hljs-comment">// 10^10000 -- granted, far less useful / in-range...</span>
 
 <span class="hljs-number">.0</span>, <span class="hljs-number">.00</span>,  <span class="hljs-number">.9</span>, <span class="hljs-number">4.2</span>, <span class="hljs-number">40.0</span>,  <span class="hljs-number">0.</span>, <span class="hljs-number">10.</span>
@@ -28,13 +28,13 @@
 <span class="hljs-number">.0e10</span>,  <span class="hljs-number">.00e+10</span>,  <span class="hljs-number">.9e-10</span>,  <span class="hljs-number">4.2E10</span>,  <span class="hljs-number">40.0E+08</span>,   <span class="hljs-number">0.E-10</span>,  <span class="hljs-number">0.e100</span>,   <span class="hljs-number">1010e+10</span>
 <span class="hljs-number">.0e1_0</span>, <span class="hljs-number">.0_0e+10</span>, <span class="hljs-number">.9e-1_0</span>, <span class="hljs-number">4.2E1_0</span>, <span class="hljs-number">4_0.0E+0_8</span>, <span class="hljs-number">0.E-1_0</span>, <span class="hljs-number">0.e1_0_0</span>, <span class="hljs-number">10_10e+10</span>
 
-<span class="hljs-keyword">let</span> nibbles = <span class="hljs-number">0b1010_0001_1000_0101</span>;
-<span class="hljs-keyword">let</span> message = <span class="hljs-number">0xA0_B0_C0</span>;
+<span class="hljs-keyword">let</span> nibbles <span class="hljs-operator">=</span> <span class="hljs-number">0b1010_0001_1000_0101</span>;
+<span class="hljs-keyword">let</span> message <span class="hljs-operator">=</span> <span class="hljs-number">0xA0_B0_C0</span>;
 
-<span class="hljs-keyword">let</span> x1 = _52;              <span class="hljs-comment">// This is an identifier, not a numeric literal</span>
-<span class="hljs-keyword">let</span> x2 = <span class="hljs-number">5_2</span>;              <span class="hljs-comment">// OK (decimal literal)</span>
+<span class="hljs-keyword">let</span> x1 <span class="hljs-operator">=</span> _52;              <span class="hljs-comment">// This is an identifier, not a numeric literal</span>
+<span class="hljs-keyword">let</span> x2 <span class="hljs-operator">=</span> <span class="hljs-number">5_2</span>;              <span class="hljs-comment">// OK (decimal literal)</span>
 
-<span class="hljs-keyword">let</span> x7 = <span class="hljs-number">0x5_2</span>;            <span class="hljs-comment">// OK (hexadecimal literal)</span>
+<span class="hljs-keyword">let</span> x7 <span class="hljs-operator">=</span> <span class="hljs-number">0x5_2</span>;            <span class="hljs-comment">// OK (hexadecimal literal)</span>
 <span class="hljs-number">0xff</span>
 <span class="hljs-number">0xdead_beef</span>
 
@@ -53,7 +53,7 @@
 <span class="hljs-number">2_00n</span>
 <span class="hljs-number">2_0_0n</span>
 <span class="hljs-number">20_0n</span>
--<span class="hljs-number">20_0n</span>
+<span class="hljs-operator">-</span><span class="hljs-number">20_0n</span>
 <span class="hljs-number">0B1n</span>
 <span class="hljs-number">0O1n</span>
 <span class="hljs-number">0X1n</span>

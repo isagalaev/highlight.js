@@ -13,6 +13,10 @@ based on dark.css by Ivan Sagalaev
   color: #dcdcdc;
 }
 
+.hljs-operator {
+  color: #f0efd0;
+}
+
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-tag {

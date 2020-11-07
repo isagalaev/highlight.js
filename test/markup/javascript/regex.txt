@@ -1,5 +1,5 @@
 // examples that have proven problematic in the past
 `Bad ${foo / 1000}`
-foo = 2 / 2 + 2 / 2;
+bar = 2 / 2 + 2 / 2;
 foo = / 2 + 2 /;
 b = a++ / 2;

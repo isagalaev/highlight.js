@@ -10,5 +10,5 @@
   `</span>]
 })
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyExampleComponent</span> </span>{
-  <span class="hljs-attr">someProp</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;blah&quot;</span>;
+  <span class="hljs-attr">someProp</span>: <span class="hljs-built_in">string</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;blah&quot;</span>;
 }

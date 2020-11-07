@@ -3,10 +3,10 @@
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">speed, cost</span>)</span> {
     <span class="hljs-built_in">super</span>(speed);
 
-    <span class="hljs-keyword">var</span> c = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;cost&#x27;</span>);
-    <span class="hljs-built_in">this</span>[c] = cost;
+    <span class="hljs-keyword">var</span> c <span class="hljs-operator">=</span> <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;cost&#x27;</span>);
+    <span class="hljs-built_in">this</span>[c] <span class="hljs-operator">=</span> cost;
 
-    <span class="hljs-built_in">this</span>.intro = <span class="hljs-string">`This is a car runs at
+    <span class="hljs-built_in">this</span>.intro <span class="hljs-operator">=</span> <span class="hljs-string">`This is a car runs at
       <span class="hljs-subst">${speed}</span>.`</span>;
   }
   <span class="hljs-function"><span class="hljs-title">join</span>(<span class="hljs-params"></span>)</span> {

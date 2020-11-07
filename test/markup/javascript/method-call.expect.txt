@@ -1,6 +1,6 @@
 x.continue(<span class="hljs-number">0</span>);
 
-x = [
+x <span class="hljs-operator">=</span> [
 hljs.COMMENT(<span class="hljs-regexp">/\{%\s*comment\s*%}/</span>, <span class="hljs-regexp">/\{%\s*endcomment\s*%}/</span>),
 hljs.COMMENT(<span class="hljs-regexp">/\{#/</span>, <span class="hljs-regexp">/#}/</span>),
 ]

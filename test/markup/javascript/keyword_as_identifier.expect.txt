@@ -1,4 +1,4 @@
-<span class="hljs-keyword">const</span> set = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
+<span class="hljs-keyword">const</span> set <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> e <span class="hljs-keyword">of</span> set)
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{

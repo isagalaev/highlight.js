@@ -2,4 +2,4 @@
  * Multiline comment
  */</span>
 &amp;sql(<span class="sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> Cinema.Film <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">Length</span> &gt; <span class="hljs-number">2</span></span>)
-&amp;js&lt;<span class="javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">String</span>(<span class="hljs-string">&quot;test&quot;</span>).split(<span class="hljs-string">&quot;&quot;</span>).length); ++i) { <span class="hljs-built_in">console</span>.log(i); }</span>&gt;
+&amp;js&lt;<span class="javascript"><span class="hljs-built_in">console</span>.log(i); <span class="hljs-built_in">localStorage</span>.set(<span class="hljs-string">&quot;fish&quot;</span>, <span class="hljs-string">&quot;bass&quot;</span>)</span>&gt;

@@ -23,7 +23,37 @@ export default function(hljs) {
     return pos !== -1;
   };
 
+  const OPERATORS = [
+    "++",
+    "--",
+    "+",
+    "-",
+    "/",
+    "+=",
+    "-=",
+    "!==",
+    "!=",
+    "===",
+    "==",
+    "=",
+    "&&",
+    "||",
+    "&",
+    "|",
+    "?=",
+    ">=",
+    // ">",
+    "<=",
+    // "<",
+    "?",
+    ":"
+  ];
   const IDENT_RE = ECMAScript.IDENT_RE;
+  const OPERATOR = {
+    className: "operator",
+    relevance: 0,
+    begin: regex.either(...OPERATORS.map(x => regex.escape(x)))
+  };
   const FRAGMENT = {
     begin: '<>',
     end: '</>'
@@ -214,6 +244,80 @@ export default function(hljs) {
     keywords: KEYWORDS,
     contains: PARAMS_CONTAINS
   };
+  // we need to remove the `{` rule so we have our own copy of this vs using the one in MODES
+  const RE_STARTERS_RE = '!==|!=|!|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
+  const VALUE_CONTAINS = [
+    COMMENT,
+    hljs.REGEXP_MODE,
+    {
+      className: 'function',
+      // we have to count the parens to make sure we actually have the
+      // correct bounding ( ) before the =>.  There could be any number of
+      // sub-expressions inside also surrounded by parens.
+      begin: '(\\(' +
+            '[^()]*(\\(' +
+            '[^()]*(\\(' +
+            '[^()]*' +
+            '\\))*[^()]*' +
+            '\\))*[^()]*' +
+            '\\)|' + hljs.UNDERSCORE_IDENT_RE + ')\\s*=>',
+      returnBegin: true,
+      end: '\\s*=>',
+      contains: [
+        {
+          className: 'params',
+          variants: [
+            {
+              begin: hljs.UNDERSCORE_IDENT_RE
+            },
+            {
+              className: null,
+              begin: /\(\s*\)/,
+              skip: true
+            },
+            {
+              begin: /\(/,
+              end: /\)/,
+              excludeBegin: true,
+              excludeEnd: true,
+              keywords: KEYWORDS,
+              contains: PARAMS_CONTAINS
+            }
+          ]
+        }
+      ]
+    },
+    { // could be a comma delimited list of params to a function call
+      begin: /,/, relevance: 0
+    },
+    {
+      className: '',
+      begin: /\s/,
+      end: /\s*/,
+      skip: true
+    },
+    { // JSX
+      variants: [
+        { begin: FRAGMENT.begin, end: FRAGMENT.end },
+        {
+          begin: XML_TAG.begin,
+          // we carefully check the opening tag to see if it truly
+          // is a tag and not a false positive
+          'on:begin': XML_TAG.isTrulyOpeningTag,
+          end: XML_TAG.end
+        }
+      ],
+      subLanguage: 'xml',
+      contains: [
+        {
+          begin: XML_TAG.begin,
+          end: XML_TAG.end,
+          skip: true,
+          contains: ['self']
+        }
+      ]
+    }
+  ];
 
   return {
     name: 'Javascript',
@@ -265,86 +369,28 @@ export default function(hljs) {
           {
             className: 'attr',
             begin: IDENT_RE + regex.lookahead('\\s*:'),
-            relevance: 0
+            relevance: 0,
+            starts:
+              {
+                contains: [{begin:'\\s*:',}]
+              }
           }
         ]
       },
-      { // "value" container
-        begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
-        keywords: 'return throw case',
-        contains: [
-          COMMENT,
-          hljs.REGEXP_MODE,
-          {
-            className: 'function',
-            // we have to count the parens to make sure we actually have the
-            // correct bounding ( ) before the =>.  There could be any number of
-            // sub-expressions inside also surrounded by parens.
-            begin: '(\\(' +
-            '[^()]*(\\(' +
-            '[^()]*(\\(' +
-            '[^()]*' +
-            '\\))*[^()]*' +
-            '\\))*[^()]*' +
-            '\\)|' + hljs.UNDERSCORE_IDENT_RE + ')\\s*=>',
-            returnBegin: true,
-            end: '\\s*=>',
-            contains: [
-              {
-                className: 'params',
-                variants: [
-                  {
-                    begin: hljs.UNDERSCORE_IDENT_RE
-                  },
-                  {
-                    className: null,
-                    begin: /\(\s*\)/,
-                    skip: true
-                  },
-                  {
-                    begin: /\(/,
-                    end: /\)/,
-                    excludeBegin: true,
-                    excludeEnd: true,
-                    keywords: KEYWORDS,
-                    contains: PARAMS_CONTAINS
-                  }
-                ]
-              }
-            ]
-          },
-          { // could be a comma delimited list of params to a function call
-            begin: /,/, relevance: 0
-          },
-          {
-            className: '',
-            begin: /\s/,
-            end: /\s*/,
-            skip: true
-          },
-          { // JSX
-            variants: [
-              { begin: FRAGMENT.begin, end: FRAGMENT.end },
-              {
-                begin: XML_TAG.begin,
-                // we carefully check the opening tag to see if it truly
-                // is a tag and not a false positive
-                'on:begin': XML_TAG.isTrulyOpeningTag,
-                end: XML_TAG.end
-              }
-            ],
-            subLanguage: 'xml',
-            contains: [
-              {
-                begin: XML_TAG.begin,
-                end: XML_TAG.end,
-                skip: true,
-                contains: ['self']
-              }
-            ]
-          }
-        ],
+      {
+        begin: /--|\+\+/,
+        className: "operator",
         relevance: 0
+      },
+      { // "value" container
+        begin: '(' + RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
+        keywords: {
+          $pattern: regex.either("case", "return", "throw", ...OPERATORS.map(x => regex.escape(x))),
+          keyword: 'return throw case',
+          operator: OPERATORS.map(x => `${x}|0`).join(" ") // 0 relevance
+        },
+        relevance: 0,
+        contains: VALUE_CONTAINS
       },
       {
         className: 'function',
@@ -353,7 +399,6 @@ export default function(hljs) {
         excludeEnd: true,
         keywords: KEYWORDS,
         contains: [
-          'self',
           hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE }),
           PARAMS
         ],

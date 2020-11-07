@@ -1,15 +1,15 @@
-<span class="hljs-keyword">var</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>/&gt;</span></span>;
-<span class="hljs-keyword">var</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">child</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span></span>;
-<span class="hljs-keyword">var</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span></span>;
-<span class="hljs-keyword">var</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
-<span class="hljs-keyword">var</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">pre-node</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">child</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre-node</span>&gt;</span></span>;
+<span class="hljs-keyword">var</span> jsx <span class="hljs-operator">=</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>/&gt;</span></span>;
+<span class="hljs-keyword">var</span> jsx <span class="hljs-operator">=</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">child</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span></span>;
+<span class="hljs-keyword">var</span> jsx <span class="hljs-operator">=</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span></span>;
+<span class="hljs-keyword">var</span> jsx <span class="hljs-operator">=</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+<span class="hljs-keyword">var</span> jsx <span class="hljs-operator">=</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">pre-node</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">child</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre-node</span>&gt;</span></span>;
 
-<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">var</span> x <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;
 
 <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">node</span> <span class="hljs-attr">attr</span>=<span class="hljs-string">&quot;value&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">node</span>&gt;</span></span>);
 
-<span class="hljs-keyword">const</span> n = <span class="hljs-function">() =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">X</span> /&gt;</span></span>
-<span class="hljs-keyword">const</span> m = <span class="hljs-function">() =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">X</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span></span>
+<span class="hljs-keyword">const</span> n <span class="hljs-operator">=</span> <span class="hljs-function">() =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">X</span> /&gt;</span></span>
+<span class="hljs-keyword">const</span> m <span class="hljs-operator">=</span> <span class="hljs-function">() =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">X</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span></span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {
@@ -24,4 +24,4 @@
   }
 }
 
-<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">var</span> x <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;
