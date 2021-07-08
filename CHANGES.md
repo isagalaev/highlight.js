@@ -2,6 +2,7 @@
 
 Grammars:
 
+- fix(xml) allow Unicode letters in XML element and attribute names(#3256)[Martin Honnen][]
 - fix(csharp) add missing `catch` keyword (#3251) [Konrad Rudolph][]
 - add additional keywords to csp.js (#3244) [Elijah Conners][]
 - feat(css) handle css variables syntax (#3239) [Thanos Karagiannis][]
@@ -19,6 +20,7 @@ Grammars:
 
 [Stel Abrego]: https://github.com/stelcodes
 [Josh Goebel]: https://github.com/joshgoebel
+[Martin Honnen]: https://github.com/martin-honnen
 [Antoine Lambert]: https://github.com/anlambert
 [Elijah Conners]: https://github.com/elijahepepe
 [Angelika Tyborska]: https://github.com/angelikatyborska

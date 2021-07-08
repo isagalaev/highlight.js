@@ -1,0 +1,1 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">categoría</span>&gt;</span>producto<span class="hljs-tag">&lt;/<span class="hljs-name">categoría</span>&gt;</span>
