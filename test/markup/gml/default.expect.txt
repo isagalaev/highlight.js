@@ -2,21 +2,21 @@
 <span class="hljs-comment">// standard collision handling</span>
 
 <span class="hljs-comment">// Horizontal collisions</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-built_in">place_meeting</span>(<span class="hljs-symbol">x</span>+hspd, <span class="hljs-symbol">y</span>, obj_wall)) {
-	<span class="hljs-keyword">while</span>(!<span class="hljs-built_in">place_meeting</span>(<span class="hljs-symbol">x</span>+<span class="hljs-built_in">sign</span>(hspd), <span class="hljs-symbol">y</span>, obj_wall)) {
-		<span class="hljs-symbol">x</span> += <span class="hljs-built_in">sign</span>(hspd);
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">place_meeting</span>(<span class="hljs-variable language_">x</span>+hspd, <span class="hljs-variable language_">y</span>, obj_wall)) {
+	<span class="hljs-keyword">while</span>(!<span class="hljs-built_in">place_meeting</span>(<span class="hljs-variable language_">x</span>+<span class="hljs-built_in">sign</span>(hspd), <span class="hljs-variable language_">y</span>, obj_wall)) {
+		<span class="hljs-variable language_">x</span> += <span class="hljs-built_in">sign</span>(hspd);
 	}
 	hspd = <span class="hljs-number">0</span>;
 }
-<span class="hljs-symbol">x</span> += hspd;
+<span class="hljs-variable language_">x</span> += hspd;
 
 <span class="hljs-comment">// Vertical collisions</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-built_in">place_meeting</span>(<span class="hljs-symbol">x</span>, <span class="hljs-symbol">y</span>+vspd, collide_obj)) {
-	<span class="hljs-keyword">while</span>(!<span class="hljs-built_in">place_meeting</span>(<span class="hljs-symbol">x</span>, <span class="hljs-symbol">y</span>+<span class="hljs-built_in">sign</span>(vspd), collide_obj)) {
-		<span class="hljs-symbol">y</span> += <span class="hljs-built_in">sign</span>(vspd);
+<span class="hljs-keyword">if</span>(<span class="hljs-built_in">place_meeting</span>(<span class="hljs-variable language_">x</span>, <span class="hljs-variable language_">y</span>+vspd, collide_obj)) {
+	<span class="hljs-keyword">while</span>(!<span class="hljs-built_in">place_meeting</span>(<span class="hljs-variable language_">x</span>, <span class="hljs-variable language_">y</span>+<span class="hljs-built_in">sign</span>(vspd), collide_obj)) {
+		<span class="hljs-variable language_">y</span> += <span class="hljs-built_in">sign</span>(vspd);
 	}
 	vspd = <span class="hljs-number">0</span>;
 }
-<span class="hljs-symbol">y</span> += vspd;
+<span class="hljs-variable language_">y</span> += vspd;
 
 <span class="hljs-built_in">show_debug_message</span>(<span class="hljs-string">&quot;This is a test&quot;</span>);
