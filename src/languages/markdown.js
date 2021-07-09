@@ -146,11 +146,11 @@ export default function(hljs) {
     contains: [], // defined later
     variants: [
       {
-        begin: /_{2}/,
+        begin: /_{2}(?=[^\n]+_{2})/,
         end: /_{2}/
       },
       {
-        begin: /\*{2}/,
+        begin: /\*{2}(?=[^\n]+\*{2})/,
         end: /\*{2}/
       }
     ]
@@ -160,12 +160,12 @@ export default function(hljs) {
     contains: [], // defined later
     variants: [
       {
-        begin: /\*(?!\*)/,
+        begin: /\*(?!\*)(?=[^\n]+\*)/,
         end: /\*/
       },
       {
-        begin: /_(?!_)/,
-        end: /_/,
+        begin: /_(?!_)(?=[^\n]+_(?!\w))/,
+        end: /_(?!\w)/,
         relevance: 0
       }
     ]
@@ -225,6 +225,12 @@ export default function(hljs) {
       HEADER,
       INLINE_HTML,
       LIST,
+      // matches normal words to prevent the `_` inside them from
+      // matching as emphasis, all because we do not have look-behind
+      {
+        relevance: 0,
+        match: /(?!_)[\w_]+/
+      },
       BOLD,
       ITALIC,
       BLOCKQUOTE,

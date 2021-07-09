@@ -16,3 +16,27 @@ __Bold *then italic*__
 
 * list with a *italic item*
 * list with a **bold item**
+
+ word_with_underscores
+ _italic_word_with_underscore_
+
+ word*with*asterisks
+ *italic*wordwith*asterisks*
+
+
+// Special handling
+
+This is how both TextMate and GitHub handle the following even
+if it doesn't follow the Markdown spec.
+
+test that *emphasis
+does not* carry across lines
+
+test that _emphasis
+does not_ carry across lines
+
+test that **strong
+does not** carry across lines
+
+test that __strong
+does not__ carry across lines

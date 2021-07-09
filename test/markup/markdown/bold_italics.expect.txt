@@ -16,3 +16,27 @@
 
 <span class="hljs-bullet">*</span> list with a <span class="hljs-emphasis">*italic item*</span>
 <span class="hljs-bullet">*</span> list with a <span class="hljs-strong">**bold item**</span>
+
+ word_with_underscores
+ <span class="hljs-emphasis">_italic_word_with_underscore_</span>
+
+ word<span class="hljs-emphasis">*with*</span>asterisks
+ <span class="hljs-emphasis">*italic*</span>wordwith<span class="hljs-emphasis">*asterisks*</span>
+
+
+// Special handling
+
+This is how both TextMate and GitHub handle the following even
+if it doesn&#x27;t follow the Markdown spec.
+
+test that *emphasis
+does not* carry across lines
+
+test that _emphasis
+does not_ carry across lines
+
+test that **strong
+does not** carry across lines
+
+test that __strong
+does not__ carry across lines

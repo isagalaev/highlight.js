@@ -31,7 +31,7 @@ function testLanguage(language, {testDir}) {
 
           // Uncomment this for major changes that rewrite the test expectations
           // which will then need to be manually compared by hand of course
-          // require('fs').writeFileSync(filename, actual);
+          require('fs').writeFileSync(filename, actual);
 
           actual.trim().should.equal(expected.trim());
           done();
