@@ -428,7 +428,7 @@ const HLJS = function(hljs) {
         }
       }
       do {
-        if (top.scope && !top.isMultiClass) {
+        if (top.scope) {
           emitter.closeNode();
         }
         if (!top.skip && !top.subLanguage) {

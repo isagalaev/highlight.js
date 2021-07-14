@@ -74,7 +74,7 @@ declare module 'highlight.js' {
         RE_STARTERS_RE: string
     }
 
-    export type LanguageFn = (hljs?: HLJSApi) => Language
+    export type LanguageFn = (hljs: HLJSApi) => Language
     export type CompilerExt = (mode: Mode, parent: Mode | Language | null) => void
 
     export interface HighlightResult {
@@ -201,7 +201,6 @@ declare module 'highlight.js' {
             illegalRe: RegExp
             matcher: any
             isCompiled: true
-            isMultiClass?: boolean
             starts?: CompiledMode
             parent?: CompiledMode
             beginScope?: Record<number, string> & {_emit?: Record<number,boolean>, _multi?: boolean, _wrap?: string}
@@ -209,13 +208,14 @@ declare module 'highlight.js' {
         }
 
     interface ModeDetails {
-        begin?: RegExp | string
-        match?: RegExp | string
-        end?: RegExp | string
+        begin?: RegExp | string | (RegExp | string)[]
+        match?: RegExp | string | (RegExp | string)[]
+        end?: RegExp | string | (RegExp | string)[]
+        // deprecated in favor of `scope`
         className?: string
-        _emit?: Record<number, boolean>
         scope?: string | Record<number, string>
         beginScope?: string | Record<number, string>
+        endScope?: string | Record<number, string>
         contains?: ("self" | Mode)[]
         endsParent?: boolean
         endsWithParent?: boolean
