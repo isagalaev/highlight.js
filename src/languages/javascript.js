@@ -38,21 +38,30 @@ export default function(hljs) {
     isTrulyOpeningTag: (match, response) => {
       const afterMatchIndex = match[0].length + match.index;
       const nextChar = match.input[afterMatchIndex];
-      // nested type?
-      // HTML should not include another raw `<` inside a tag
-      // But a type might: `<Array<Array<number>>`, etc.
-      if (nextChar === "<") {
+      // TODO: can this conditional be removed entirely?
+      // in favor of the fallback below?
+      if (
+        // HTML should not include another raw `<` inside a tag
+        // nested type?
+        // `<Array<Array<number>>`, etc.
+        nextChar === "<" ||
+        // the , gives away that this is not HTML
+        // `<T, A extends keyof T, V>`
+        nextChar === ",") {
         response.ignoreMatch();
         return;
       }
-      // <something>
-      // This is now either a tag or a type.
-      if (nextChar === ">") {
+      // `<something>` or `<something ...`
+      // Quite possibly a tag, lets look for a matching closing tag...
+      if (nextChar === ">" || nextChar === " ") {
         // if we cannot find a matching closing tag, then we
         // will ignore it
         if (!hasClosingTag(match, { after: afterMatchIndex })) {
           response.ignoreMatch();
         }
+      } else {
+        // fallback, doesn't look like HTML
+        response.ignoreMatch();
       }
     }
   };
@@ -460,6 +469,7 @@ export default function(hljs) {
                 end: XML_TAG.end
               }
             ],
+            scope: "booger",
             subLanguage: 'xml',
             contains: [
               {

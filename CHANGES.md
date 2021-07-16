@@ -1,3 +1,12 @@
+## Version 11.2.0 (in progress)
+
+Grammars:
+
+- fix(ts) some complex types would classify as JSX, breaking highlighting (#3278) [Josh Goebel][]
+
+[Josh Goebel]: https://github.com/joshgoebel
+
+
 ## Version 11.1.0
 
 Grammars:
