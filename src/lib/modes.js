@@ -4,6 +4,16 @@ import * as regex from './regex.js';
 /** @typedef {import('highlight.js').Mode} Mode */
 /** @typedef {import('highlight.js').ModeCallback} ModeCallback */
 
+// Determine browser support for RegExp unicode property escapes
+let _unicode_supported = true;
+try {
+  new RegExp("\\p{L}", "u")
+} catch {
+  _unicode_supported = false;
+}
+
+export const UNICODE_SUPPORTED = _unicode_supported;
+
 // Common regexps
 export const MATCH_NOTHING_RE = /\b\B/;
 export const IDENT_RE = '[a-zA-Z]\\w*';

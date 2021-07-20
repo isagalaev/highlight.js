@@ -8,7 +8,9 @@ const { RegExpParser } = require('regexpp');
  * @typedef {{ pattern: Pattern, flags: Flags }} LiteralAST
  */
 
-const parser = new RegExpParser({ strict: false, ecmaVersion: 6 });
+const parser = new RegExpParser({ strict: false, ecmaVersion: 2018 });
+// ecmaVersion 2018 is ECMAScript 9
+
 /** @type {Map<string, LiteralAST>} */
 const astCache = new Map();
 

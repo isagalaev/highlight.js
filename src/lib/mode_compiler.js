@@ -33,7 +33,7 @@ export function compileLanguage(language) {
   function langRe(value, global) {
     return new RegExp(
       regex.source(value),
-      'm' + (language.case_insensitive ? 'i' : '') + (global ? 'g' : '')
+      'm' + (language.case_insensitive ? 'i' : '') + (language.unicode ? 'u' : '') + (global ? 'g' : '')
     );
   }
 

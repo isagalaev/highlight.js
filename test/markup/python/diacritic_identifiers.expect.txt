@@ -1,0 +1,23 @@
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">fóö</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">bär</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">FOÖ</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">ÿay</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">fóö</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">bär</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">FOÖ</span>():
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ÿay</span>():
+    <span class="hljs-keyword">pass</span>

@@ -1,0 +1,23 @@
+def fóö():
+    pass
+
+def bär():
+    pass
+
+def FOÖ():
+    pass
+
+def ÿay():
+    pass
+
+class fóö():
+    pass
+
+class bär():
+    pass
+
+class FOÖ():
+    pass
+
+class ÿay():
+    pass

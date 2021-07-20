@@ -1,3 +1,11 @@
+## Version 11.2.0 (in progress)
+
+Grammars:
+
+- fix(python) added support for unicode identifiers [Austin Schick][]
+
+[Austin Schick]: https://github.com/austin-schick
+
 ## Version 11.1.0
 
 Grammars:
