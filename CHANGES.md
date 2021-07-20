@@ -1,3 +1,9 @@
+## Version 11.1.1 (pending)
+
+- Trusted Types compatibility (#3281) [Jakub Vrána][]
+
+[Jakub Vrána]: https://github.com/vrana
+
 ## Version 11.1.0
 
 Grammars:

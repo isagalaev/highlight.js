@@ -708,6 +708,11 @@ const HLJS = function(hljs) {
     element.classList.add(`language-${language}`);
   }
 
+  let ttPolicy = {createHTML: s => s};
+  if (typeof trustedTypes != 'undefined') {
+    ttPolicy = trustedTypes.createPolicy('highlight.js', ttPolicy);
+  }
+
   /**
    * Applies highlighting to a DOM node containing code.
    *
@@ -734,7 +739,7 @@ const HLJS = function(hljs) {
     const text = node.textContent;
     const result = language ? highlight(text, { language, ignoreIllegals: true }) : highlightAuto(text);
 
-    element.innerHTML = result.value;
+    element.innerHTML = ttPolicy.createHTML(result.value);
     updateClassName(element, language, result.language);
     element.result = {
       language: result.language,
