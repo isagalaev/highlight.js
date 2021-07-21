@@ -3,11 +3,11 @@
 
 <span class="hljs-keyword">namespace</span> impl {
     <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
-    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">is_streamable</span>&lt;T, std::<span class="hljs-type">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(std::<span class="hljs-built_in">declval</span>&lt;std::wostream &amp;&gt;() &lt;&lt; std::<span class="hljs-built_in">declval</span>&lt;T&gt;())&gt;&gt; : std::true_type { };
+    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">is_streamable</span>&lt;T, std::void_t&lt;<span class="hljs-keyword">decltype</span>(std::<span class="hljs-built_in">declval</span>&lt;std::wostream &amp;&gt;() &lt;&lt; std::<span class="hljs-built_in">declval</span>&lt;T&gt;())&gt;&gt; : std::true_type { };
 }
 
 <span class="hljs-comment">// Disable overload for already valid operands.</span>
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>, <span class="hljs-keyword">class</span> = std::<span class="hljs-type">enable_if_t</span>&lt;!impl::is_streamable_v&lt;<span class="hljs-keyword">const</span> T &amp;&gt; &amp;&amp; std::is_convertible_v&lt;<span class="hljs-keyword">const</span> T &amp;, std::wstring_view&gt;&gt;&gt;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>, <span class="hljs-keyword">class</span> = std::enable_if_t&lt;!impl::is_streamable_v&lt;<span class="hljs-keyword">const</span> T &amp;&gt; &amp;&amp; std::is_convertible_v&lt;<span class="hljs-keyword">const</span> T &amp;, std::wstring_view&gt;&gt;&gt;
 std::wostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt;(std::wostream &amp;stream, <span class="hljs-keyword">const</span> T &amp;thing)
 {
     <span class="hljs-keyword">return</span> stream &lt;&lt; <span class="hljs-built_in">static_cast</span>&lt;std::wstring_view&gt;(thing);

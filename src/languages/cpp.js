@@ -27,11 +27,6 @@ export default function(hljs) {
     '[a-zA-Z_]\\w*' + regex.optional(TEMPLATE_ARGUMENT_RE) +
   ')';
 
-  const CPP_PRIMITIVE_TYPES = {
-    className: 'type',
-    begin: '\\b[a-z\\d_]*_t\\b'
-  };
-
   // https://en.cppreference.com/w/cpp/language/escape
   // \\ \x \xFF \u2837 \u00323747 \374
   const CHARACTER_ESCAPES = '\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)';
@@ -217,6 +212,102 @@ export default function(hljs) {
     'wchar_t'
   ];
 
+  // Additional (not officially reserved) types, used for highlighting.
+  const ADDITIONAL_TYPES = [
+    'FILE',
+    'atomic_bool',
+    'atomic_char',
+    'atomic_char16_t',
+    'atomic_char32_t',
+    'atomic_char8_t',
+    'atomic_int',
+    'atomic_int16_t',
+    'atomic_int32_t',
+    'atomic_int64_t',
+    'atomic_int8_t',
+    'atomic_int_fast16_t',
+    'atomic_int_fast32_t',
+    'atomic_int_fast64_t',
+    'atomic_int_fast8_t',
+    'atomic_int_least16_t',
+    'atomic_int_least32_t',
+    'atomic_int_least64_t',
+    'atomic_int_least8_t',
+    'atomic_intmax_t',
+    'atomic_intptr_t',
+    'atomic_llong',
+    'atomic_long',
+    'atomic_ptrdiff_t',
+    'atomic_schar',
+    'atomic_short',
+    'atomic_size_t',
+    'atomic_uchar',
+    'atomic_uint',
+    'atomic_uint16_t',
+    'atomic_uint32_t',
+    'atomic_uint64_t',
+    'atomic_uint8_t',
+    'atomic_uint_fast16_t',
+    'atomic_uint_fast32_t',
+    'atomic_uint_fast64_t',
+    'atomic_uint_fast8_t',
+    'atomic_uint_least16_t',
+    'atomic_uint_least32_t',
+    'atomic_uint_least64_t',
+    'atomic_uint_least8_t',
+    'atomic_uintmax_t',
+    'atomic_uintptr_t',
+    'atomic_ullong',
+    'atomic_ulong',
+    'atomic_ushort',
+    'atomic_wchar_t',
+    'byte',
+    'clock_t',
+    'fpos_t',
+    'int16_t',
+    'int32_t',
+    'int64_t',
+    'int8_t',
+    'int_fast16_t',
+    'int_fast32_t',
+    'int_fast64_t',
+    'int_fast8_t',
+    'int_least16_t',
+    'int_least32_t',
+    'int_least64_t',
+    'int_least8_t',
+    'intmax_t',
+    'intptr_t',
+    'jmp_buf',
+    'max_align_t',
+    'mbstate_t',
+    'nullptr_t',
+    'ptrdiff_t',
+    'sig_atomic_t',
+    'size_t',
+    'streamoff',
+    'streamsize',
+    'time_t',
+    'uint16_t',
+    'uint32_t',
+    'uint64_t',
+    'uint8_t',
+    'uint_fast16_t',
+    'uint_fast32_t',
+    'uint_fast64_t',
+    'uint_fast8_t',
+    'uint_least16_t',
+    'uint_least32_t',
+    'uint_least64_t',
+    'uint_least8_t',
+    'uintmax_t',
+    'uintptr_t',
+    'va_list',
+    'wctrans_t',
+    'wctype_t',
+    'wint_t'
+  ];
+
   const TYPE_HINTS = [
     'any',
     'auto_ptr',
@@ -392,7 +483,7 @@ export default function(hljs) {
   ];
 
   const CPP_KEYWORDS = {
-    type: RESERVED_TYPES,
+    type: [...RESERVED_TYPES, ...ADDITIONAL_TYPES],
     keyword: RESERVED_KEYWORDS,
     literal: LITERALS,
     built_in: BUILT_IN,
@@ -419,7 +510,6 @@ export default function(hljs) {
   const EXPRESSION_CONTAINS = [
     FUNCTION_DISPATCH,
     PREPROCESSOR,
-    CPP_PRIMITIVE_TYPES,
     C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
     NUMBERS,
@@ -509,7 +599,6 @@ export default function(hljs) {
           hljs.C_BLOCK_COMMENT_MODE,
           STRINGS,
           NUMBERS,
-          CPP_PRIMITIVE_TYPES,
           // Count matching parentheses.
           {
             begin: /\(/,
@@ -521,13 +610,11 @@ export default function(hljs) {
               C_LINE_COMMENT_MODE,
               hljs.C_BLOCK_COMMENT_MODE,
               STRINGS,
-              NUMBERS,
-              CPP_PRIMITIVE_TYPES
+              NUMBERS
             ]
           }
         ]
       },
-      CPP_PRIMITIVE_TYPES,
       C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
       PREPROCESSOR
@@ -561,10 +648,7 @@ export default function(hljs) {
           begin: '\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array|tuple|optional|variant|function)\\s*<',
           end: '>',
           keywords: CPP_KEYWORDS,
-          contains: [
-            'self',
-            CPP_PRIMITIVE_TYPES
-          ]
+          contains: [ 'self' ]
         },
         {
           begin: hljs.IDENT_RE + '::',
